@@ -1,43 +1,30 @@
-package metodos;
+package metodos1atividade;
 
+import java.util.Scanner;
 public class Atividade1 {
-    public static void exibirNum(){
-        
-        for(int i = 1; i <=10;i++){
-            System.out.println(i);
-        }
-    }
-    public static void separacao(){
-        System.out.println("---------------------------------------------------");
-    }
-    public static void numPar(){
-        for(int i = 0; i <=100;i++){
-            if(i%2==0){
-                System.out.println(i);
+    public static boolean verficarPalindromo(String nome){
+        int contador = 0;
+        for(int i = 0; i < nome.length();i++){
+            if(nome.charAt((nome.length()-i)-1)==nome.charAt(i)){
+                contador++;
             }
         }
-    }
-    public static void tabuada5(){
-        int resultado=0;
-        for(int i = 0; i <=10; i++){
-            resultado=5*i;
-            System.out.printf("5x%d=%d \n",i,resultado);
+        if(contador==nome.length()){
+            return true;
+        }else{
+            return false;
         }
     }
     public static void main(String[] args) {
-        System.out.println("contagem de 1 a 10");
-        exibirNum();
-        
-        separacao();
+        Scanner ler = new Scanner(System.in);
 
-        System.out.println("os pares são");
-        numPar();
-        
-        separacao();
-        
-        System.out.println("a tabuada de 5 é");
-        tabuada5();
-
-        separacao();
+        System.out.println("Escreva uma palavra");
+        String nome = ler.nextLine();
+        if(verficarPalindromo(nome)){
+            System.out.println("é palindromo");
+        }else{
+            System.out.println("não é palindromo");
+        }
+        ler.close();
     }
 }
