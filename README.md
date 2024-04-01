@@ -1,1 +1,2 @@
-# Segundo_periodo_faculdade
+### Segundo periodo faculdade
+Atividades que realizei durante o segundo periodo da faculdade
